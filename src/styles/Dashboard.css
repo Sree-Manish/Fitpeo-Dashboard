@@ -1,0 +1,212 @@
+.main-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.main-content>div{
+    padding: 1.5rem;
+    display: grid;
+    grid-template-rows: 2.5fr 1fr;
+}
+
+.main-content>div:nth-of-type(2){
+    background: var(--lightgray);
+    border-bottom-right-radius: 2.5rem;
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.Dashboard-view{
+    position: relative;
+}
+
+.Dashboard-view>div:last-of-type{
+    padding: 0.5rem;
+    display: grid;
+    grid-template-columns: 3fr 1.5fr;
+    gap: 4rem;
+}
+
+
+.Dashboard-view h2{
+    font-size: 2rem;
+    color: var(--site-blue);
+}
+
+.health-stats span{
+    position: absolute;
+    right: 1rem;
+    bottom: calc((1vw - 21px) * 5);
+    font-size: 1rem;
+    color: var(--nav-link);
+}
+
+.anatomy{
+    width: 83%;
+    aspect-ratio: 4/5;
+    position: relative;
+    background: var(--lightgray);
+    padding: 0.5rem;
+    padding-bottom: 3rem;
+    border-radius: 1rem;
+}
+
+.anatomy svg{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.anatomy img{    
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    position: relative;
+    left: 28%;
+    filter: contrast(1.5); 
+}
+
+.scan-overlay {
+    position: absolute;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: conic-gradient(from 0deg, transparent 22.5deg, rgba(0, 0, 255, 0.7) 22.5deg 67.5deg, transparent 67.5deg 112.5deg, rgba(0, 0, 255, 0.7) 112.5deg 157.5deg, transparent 157.5deg 202.5deg, rgba(0, 0, 255, 0.7) 202.5deg 247.5deg, transparent 247.5deg 292.5deg, rgba(0, 0, 255, 0.7) 292.5deg 337.5deg, transparent 337.5deg);
+    top: var(--topp);
+    left: var(--leftt);
+    border-radius: 4px; 
+    padding: 2px; 
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+.scan-overlay::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 0 50%, rgba(0, 0, 255, 0.603) 50%, transparent 100%);
+}
+
+.anatomy>div:not(.scan-overlay){
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+}
+
+.anatomy>div:first-of-type{
+    position: absolute;
+    top: 20%;
+    right: -2rem;
+    height: 2rem;
+    background: rgb(12, 12, 161);
+    color: white;
+}
+
+.anatomy>div:nth-of-type(2){
+    position: absolute;
+    top: 65%;
+    left: -4px;
+    height: 2rem;
+    background: cyan;
+    color: rgb(12, 12, 161);
+}
+
+.anatomy>div:first-of-type::before{
+    content: "❤️";
+    margin-right: 2px;
+}
+
+.anatomy>div:nth-of-type(2)::before{
+    content: "🦵";
+    margin-right: 2px;
+}
+
+.dash-head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 0.75rem;
+}
+
+.health-stats{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    position: relative;
+}
+
+.drop{
+    text-align: right; 
+}
+
+.health-stat{
+    border-radius: 1.5rem;
+    background: var(--lightgray);
+    width: 85%;    
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.body-part{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.health-stat img{
+    width: 40%;
+    aspect-ratio: 1/1;
+}
+
+.stat-range{
+    appearance:none;
+    height: 8px;
+    background: linear-gradient(to right, var(--colour) 75%, rgb(220,220,220) 75% );
+    border-radius: 8px;
+    width: 90%;
+}
+
+.stat-range::-webkit-slider-thumb{
+    visibility: hidden;
+}
+
+@media (max-width: 1500px){
+    .main-content{
+        grid-template-columns: auto;
+    } 
+
+    .health-stats span{
+        bottom: 10%;
+    }
+}
+
+@media (max-width: 1000px){
+    .anatomy{
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 800px){
+    .Dashboard-view>div:last-of-type{
+        grid-template-columns: auto;
+    }
+
+    .health-stats span{
+        top: -2rem;
+    }
+
+    .health-stats{
+        flex-direction: row;
+        margin-bottom: 2rem;
+    }
+
+    .health-stat{
+        width: 33%;
+    }
+}

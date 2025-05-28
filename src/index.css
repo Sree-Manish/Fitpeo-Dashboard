@@ -1,0 +1,50 @@
+
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  background-color: rgb(234, 239, 245);
+  padding: 1.5rem;
+
+  --lightgray: hsl(218, 80%, 97%);
+  --darkgray: hsl(218, 80%, 92%);
+  --nav-link: hsl(225, 13%, 70%);
+  --site-blue: hsl(242, 53%, 43%);
+}
+
+@media (max-width: 1500px){
+  html{
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1200px){
+
+  :root{
+    padding: 1rem;
+  }
+
+  html{
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 750px){
+  html{
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px){
+
+  :root{
+    padding: 0.5rem;
+  }
+
+  html{
+    font-size: 8px;
+  }
+}
