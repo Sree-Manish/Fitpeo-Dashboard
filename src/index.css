@@ -33,16 +33,16 @@
 }
 
 @media (max-width: 750px){
+  :root{
+    padding: 0.5rem;
+  }
+  
   html{
     font-size: 10px;
   }
 }
 
 @media (max-width: 400px){
-
-  :root{
-    padding: 0.5rem;
-  }
 
   html{
     font-size: 8px;

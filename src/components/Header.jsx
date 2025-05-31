@@ -1,6 +1,7 @@
 
 import "../styles/Header.css";
 import { BellIcon, PlusIcon, SearchIcon } from "../assets/icons";
+import userimg from "../assets/user.png"
 
 const Header = () => {
   return (
@@ -13,7 +14,7 @@ const Header = () => {
         </div>
         <div className="user-set">
           <div className="user-logo">
-
+            <img src={userimg} alt="" />
           </div>
           <PlusIcon />
         </div>
