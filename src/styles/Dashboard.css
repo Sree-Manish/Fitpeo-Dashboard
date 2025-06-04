@@ -68,7 +68,7 @@
     filter: contrast(1.5); 
 }
 
-.scan-overlay {
+/* .scan-overlay {
     position: absolute;
     width: 10%;
     aspect-ratio: 1/1;
@@ -90,13 +90,45 @@
     top: 0;
     z-index: 1;
     background: linear-gradient(to bottom, transparent 0 50%, rgba(0, 0, 255, 0.603) 50%, transparent 100%);
+} */
+
+.scan-overlay {
+    position: absolute;
+    top: var(--topp);
+    left: var(--leftt);
+    width: 10%;
+    aspect-ratio: 1/1;
+    background: transparent; 
+    border-radius: 10%; 
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 255, 0.8) 50%, transparent 100%);
+}
+
+.scan-overlay::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: conic-gradient(from 0deg, transparent 25deg, rgba(0, 0, 255, 0.7) 25deg 65deg, transparent 65deg 115deg, rgba(0, 0, 255, 0.7) 115deg 155deg, transparent 155deg 205deg, rgba(0, 0, 255, 0.7) 205deg 245deg, transparent 245deg 295deg, rgba(0, 0, 255, 0.7) 295deg 335deg, transparent 335deg);
+    border-radius: 10%; 
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 2px; 
 }
 
 .anatomy>div:not(.scan-overlay){
     position: absolute;
     display: flex;
     align-items: center;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     border-radius: 4px;
     font-size: 80%;
     height: clamp(2rem,5%,3rem);
@@ -228,5 +260,11 @@
 
     .health-stat{
         width: 33%;
+    }
+
+    .anatomy>div:not(.scan-overlay){
+        font-size: 1.5rem;
+        padding-inline: 0.5rem;
+        width: auto;
     }
 }
