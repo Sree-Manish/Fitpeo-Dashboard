@@ -47,6 +47,7 @@
     right: 1rem;
 }
 
+/*
 .anatomy img{    
     max-width: 100%;
     max-height: 100%;
@@ -56,7 +57,7 @@
     filter: contrast(1.5); 
 }
 
-/* .scan-overlay {
+ .scan-overlay {
     position: absolute;
     width: 10%;
     aspect-ratio: 1/1;
@@ -80,15 +81,24 @@
     background: linear-gradient(to bottom, transparent 0 50%, rgba(0, 0, 255, 0.603) 50%, transparent 100%);
 } */
 
-.scan-overlay {
+.anatomy>div:not(.model){
+    height: 8%;
+    display: flex;
     position: absolute;
     top: var(--topp);
     left: var(--leftt);
-    width: 10%;
+    right: var(--rightt);
+    align-items: center;
+    gap: var(--gap-bet);
+}
+
+.scan-overlay {
+    height: 100%;
     aspect-ratio: 1/1;
     background: transparent; 
     border-radius: 10%; 
     background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 255, 0.8) 50%, transparent 100%);
+    position: relative;
 }
 
 .scan-overlay::before {
@@ -98,7 +108,7 @@
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: conic-gradient(from 0deg, transparent 25deg, rgba(0, 0, 255, 0.7) 25deg 65deg, transparent 65deg 115deg, rgba(0, 0, 255, 0.7) 115deg 155deg, transparent 155deg 205deg, rgba(0, 0, 255, 0.7) 205deg 245deg, transparent 245deg 295deg, rgba(0, 0, 255, 0.7) 295deg 335deg, transparent 335deg);
+    background: conic-gradient(from 0deg, transparent 15deg, rgba(0, 0, 255, 0.7) 35deg 55deg, transparent 75deg 105deg, rgba(0, 0, 255, 0.7) 125deg 145deg, transparent 165deg 195deg, rgba(0, 0, 255, 0.7) 215deg 235deg, transparent 255deg 285deg, rgba(0, 0, 255, 0.7) 305deg 325deg, transparent 345deg);
     border-radius: 10%; 
     mask: 
         linear-gradient(#fff 0 0) content-box, 
@@ -111,18 +121,13 @@
     padding: 2px; 
 }
 
-.anatomy>div:not(.scan-overlay){
-    position: absolute;
-    top: var(--topp);
-    left: var(--leftt);
-    right: var(--rightt);
+.anatomy>div:not(.model)>div:not(.scan-overlay){
     border-radius: 4px;
     font-size: 90%;
     display: flex;
     place-items: center;
-    height: clamp(1rem,10%,1.75rem);
-    justify-content: space-evenly;   
-    width: clamp(8rem, 10%, 40rem);
+    width: 8rem;   
+    min-height: 2rem;
     background: var(--backcolour);
     color: var(--textcolour);
 }
