@@ -2,17 +2,13 @@
 
 nav{
     position: fixed;
-    bottom: 2.25rem;
+    bottom: 2rem;
     min-height: max(30rem,calc(100vh - 9.75rem));
-    width: calc((100vw - 4.5rem) * 0.2);
-    background-color: var(--lightgray);
-    border-bottom-left-radius: 2.5rem;
     color: var(--nav-link);
     font-size: 1.2rem;
     font-weight: 700;
     display: flex;
     flex-direction: column;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
 
 .sub-nav{
@@ -29,7 +25,7 @@ nav ul{
     list-style: none;
 }
 
-.nav-links{
+.nav-links, .chat, .support, .settings{
     padding: 0.5rem 0 0.5rem 4rem;
     cursor: pointer;
     display: flex;
@@ -42,21 +38,17 @@ nav ul{
 }
 
 .chat,.support{
-    padding: 0.5rem 0 0.5rem 4rem;
-    cursor: pointer; 
     margin-bottom: 1.1rem;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
 }
 
 .settings{
-    padding: 0.5rem 0 0.5rem 4rem;
-    cursor: pointer; 
     margin-block: auto 2rem;
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
+}
+
+@media (max-width: 1200px){
+    .nav-links, .chat, .support, .settings{
+        padding-left: 3rem;
+    }
 }
 
 @media (max-width: 1000px){
@@ -83,7 +75,7 @@ nav ul{
     }
 }
 
-@media (max-width: 500px){
+@media (max-width: 600px){
 
     nav{
         width: 4rem;
@@ -94,8 +86,8 @@ nav ul{
     }
 
     nav svg{
-        width: 1.5rem;
-        height: 1.5rem;
+        width: 2rem;
+        height: 2rem;
     }
 
 }

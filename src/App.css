@@ -11,11 +11,14 @@
 }
 
 main{
+  --sidenav: 20%;
   display: grid;
   grid-template-columns: 2fr 8fr;
   flex: 1;
   gap: 0;
   border-bottom-right-radius: 2.5rem;
+  border-bottom-left-radius: 2.5rem;
+  background: linear-gradient(to right, var(--lightgray) var(--sidenav), transparent var(--sidenav));
 }
 
 .dummydiv{
@@ -30,13 +33,14 @@ main{
   }
 
   main{
-    grid-template-columns: 7rem auto;
+    --sidenav: 7rem;
+    grid-template-columns: var(--sidenav) auto;
   }
 }
 
-@media (max-width: 500px){
+@media (max-width: 600px){
   main{
-    grid-template-columns: 4rem auto;
+    --sidenav: 5rem;
   }
 }
 

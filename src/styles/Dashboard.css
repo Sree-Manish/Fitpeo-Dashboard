@@ -1,7 +1,6 @@
 .main-content{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .main-content>div{
@@ -18,14 +17,10 @@
     grid-template-rows: auto auto;
 }
 
-.Dashboard-view{
-    position: relative;
-}
-
 .Dashboard-view>div:last-of-type{
     padding: 0.5rem;
     display: grid;
-    grid-template-columns: 3fr 1.5fr;
+    grid-template-columns: 2fr 1fr;
     gap: 4rem;
 }
 
@@ -33,14 +28,6 @@
 .Dashboard-view h2{
     font-size: 2rem;
     color: var(--site-blue);
-}
-
-.health-stats span{
-    position: absolute;
-    right: 1rem;
-    bottom: calc((1vw - 21px) * 5);
-    font-size: 1rem;
-    color: var(--nav-link);
 }
 
 .anatomy{
@@ -51,6 +38,7 @@
     padding: 0.5rem;
     padding-bottom: 3rem;
     border-radius: 1rem;
+    margin: 0 auto;
 }
 
 .anatomy svg{
@@ -100,7 +88,6 @@
     aspect-ratio: 1/1;
     background: transparent; 
     border-radius: 10%; 
-    box-sizing: border-box;
     background: linear-gradient(to bottom, transparent 50%, rgba(0, 0, 255, 0.8) 50%, transparent 100%);
 }
 
@@ -126,38 +113,18 @@
 
 .anatomy>div:not(.scan-overlay){
     position: absolute;
-    display: flex;
-    align-items: center;
-    padding: 0 0.5rem;
+    top: var(--topp);
+    left: var(--leftt);
+    right: var(--rightt);
     border-radius: 4px;
-    font-size: 80%;
-    height: clamp(2rem,5%,3rem);
+    font-size: 90%;
+    display: flex;
+    place-items: center;
+    height: clamp(1rem,10%,1.75rem);
     justify-content: space-evenly;   
     width: clamp(8rem, 10%, 40rem);
-}
-
-.anatomy>div:first-of-type{
-    position: absolute;
-    top: 20%;
-    right: -15%;
-    background: rgb(12, 12, 161);
-    color: white;
-}
-
-.anatomy>div:nth-of-type(2){
-    position: absolute;
-    top: 63%;
-    left: -3%;
-    background: cyan;
-    color: rgb(12, 12, 161);
-}
-
-.anatomy>div:first-of-type::before{
-    content: "❤️";
-}
-
-.anatomy>div:nth-of-type(2)::before{
-    content: "🦵";
+    background: var(--backcolour);
+    color: var(--textcolour);
 }
 
 .dash-head{
@@ -174,8 +141,11 @@
     position: relative;
 }
 
-.drop{
-    text-align: right; 
+.health-stats span{
+    position: absolute;
+    right: 1rem;
+    bottom: calc((1vw - 21px) * 5);
+    color: var(--nav-link);
 }
 
 .health-stat{
@@ -211,7 +181,7 @@
     visibility: hidden;
 }
 
-@media (max-width: 1500px){
+@media (max-width: 1400px){
     .main-content{
         grid-template-columns: auto;
     } 
@@ -220,22 +190,18 @@
         bottom: 10%;
     }
 
+    .anatomy{
+        width: 75%;
+    }
+
     .anatomy>div:first-of-type{
-        position: absolute;
-        top: 20%;
-        right: 10%;
-        background: rgb(12, 12, 161);
-        color: white;
+        --topp: 21% !important;
     }
 
     .anatomy>div:nth-of-type(2){
-        position: absolute;
-        /* top: 65%;
-        left: 20%; */
-        transform: translate(50%,50%);
-        background: cyan;
-        color: rgb(12, 12, 161);
+        --topp: 65% !important;
     }
+
 }
 
 @media (max-width: 1000px){
@@ -261,10 +227,5 @@
     .health-stat{
         width: 33%;
     }
-
-    .anatomy>div:not(.scan-overlay){
-        font-size: 1.5rem;
-        padding-inline: 0.5rem;
-        width: auto;
-    }
+    
 }

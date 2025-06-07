@@ -53,6 +53,7 @@
 }
 
 .calendar :is(.days, .dates, .timings)::before{
+    content: '';    
     background: var(--back-colour);
     color: var(--text-colour);
     background-clip: content-box;
@@ -79,4 +80,10 @@
 
 .calendar-appoint>div:last-of-type{
     flex:1;
+}
+
+@media (max-width: 1400px){
+    .calendar-appoint>div:last-of-type{
+        flex:unset;
+    }
 }
