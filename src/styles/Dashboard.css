@@ -199,14 +199,6 @@
         width: 75%;
     }
 
-    .anatomy>div:first-of-type{
-        --topp: 21% !important;
-    }
-
-    .anatomy>div:nth-of-type(2){
-        --topp: 65% !important;
-    }
-
 }
 
 @media (max-width: 1000px){

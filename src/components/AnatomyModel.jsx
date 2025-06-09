@@ -6,10 +6,8 @@ function Model({ url }) {
   const gltf = useGLTF(url);
   const modelRef = useRef();
 
-  // Optionally animate or control the model (e.g., spinning)
   useFrame(() => {
     if (modelRef.current) {
-      // Optional: Auto-rotation can go here
       // modelRef.current.rotation.z += 0.01;
     }
   });
